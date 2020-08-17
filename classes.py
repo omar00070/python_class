@@ -7,13 +7,13 @@ class Car:
         self.position = 0
         self.direction = "north"
 
-    def move_forward():
+    def move_forward(self):
         self.position += 1
     
-    def move_backword():
+    def move_backword(self):
         self.position -= 1 #self.position = self.position - 1
     
-    def turn_left():
+    def turn_left(self):
         if self.direction == "north":
             self.direction = "west"
         if self.direction == "west":
@@ -22,3 +22,18 @@ class Car:
             self.direction = "east"
         if self.direction == "east":
             self.direction = "north"
+
+bmw_car = Car()
+bmw_car.position
+
+bmw_car.move_backword()
+bmw_car.move_backword()
+
+print(bmw_car.color)
+
+
+
+
+
+
+
