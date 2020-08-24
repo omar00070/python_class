@@ -1,8 +1,10 @@
 import pygame
+from player.player import Player
 
 #initiate pygame
 pygame.init()
 
+#colors section
 red = (255, 0, 0)
 white = (255, 255, 255)
 
@@ -14,31 +16,10 @@ screen  = pygame.display.set_mode((screen_width, screen_height))
 
 # -------------------------------------------------------player class -----------------------------------------------------
 
-class Player:
-    def __init__(self, color = red): # initiate the player with its attributes 
-        self.x = 30             #position x
-        self.y = 50             #position y
-        self._speed = 15        #speed of moving to the right
-        self._height = 15       
-        self._width = 15
-        self.color = color
-        self.moving_right = False
-        self.moving_left = False
-
-    def draw(self):
-        pygame.draw.rect(screen, self.color,(self.x, self.y, self._width, self._height)) # draw the player on the screen
 
 
-    def move_right(self):
-        if(self.moving_right):
-            self.x += self._speed
 
-    def move_left(self):
-        if(self.moving_left):
-            self.x -= self._speed
-
-
-player = Player() #instance of the player class
+player = Player(red, screen) #instance of the player class
 
 def borders_check_left(obj,surface):
     # function to check if an object hits
